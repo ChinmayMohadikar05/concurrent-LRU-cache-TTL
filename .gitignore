@@ -39,3 +39,14 @@
 
 # debug information files
 *.dwo
+
+# Custom binary name
+cache
+
+# Build folders
+build/
+bin/
+
+# IDE
+.vscode/
+.idea/
