@@ -31,7 +31,8 @@ private:
     Node* head;
     Node* tail;
 
-	// use shared mutex for multiple thread access
+	// shared_mutex is used in modern compilers (GCC 7+).
+	// Fallback to mutex is provided for compatibility. 
     mutable mutex mtx;
     bool stopCleaner;
     thread cleanerThread;
