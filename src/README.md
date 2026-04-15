@@ -7,7 +7,7 @@ A high-performance in-memory cache system implementing:
 - Concurrent access handling
 - Background cleaner thread
 
-## ⚙️ Features
+## Features
 - O(1) get and put operations
 - TTL-based automatic expiration
 - Min-heap for efficient expiry tracking
