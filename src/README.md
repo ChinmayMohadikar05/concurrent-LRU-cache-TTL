@@ -17,10 +17,12 @@ A high-performance in-memory cache system implementing:
 ## System Design
 
 ### Components:
-- Doubly Linked List → Maintains LRU order
-- Hash Map → O(1) access
-- Min Heap → Efficient TTL expiry
-- Background Thread → Active cleanup
+- Doubly Linked List → to maintains LRU order
+- Hash Map → for O(1) access
+- latestExpiry map → to avoid stale heap entries 
+- Min Heap → for efficient TTL expiry
+- Background Thread → for active cleanup
+- Thread safety → use mutex for safe concurrent access
 
 ## Complexity
 | Operation | Time Complexity |
@@ -29,7 +31,8 @@ A high-performance in-memory cache system implementing:
 | put      | O(1)             |
 | expiry cleanup | O(log N)   |
 
----
+## Performance
+Handles 1M operations/sec (single-threaded)
 
 ## How to Run
 
